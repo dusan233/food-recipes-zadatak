@@ -1,10 +1,11 @@
 import React from 'react';
 import { useState } from 'react';
-import { Link, withRouter } from 'react-router-dom';
+import { Link, withRouter, useLocation } from 'react-router-dom';
 
 const Header = () => {
     const [showLogin, setShowLogin] = useState(false);
-
+    const location = useLocation();
+    
     return (
         <div className="header">
             <div className="header__left">
@@ -35,15 +36,15 @@ const Header = () => {
                             </button>
                         </div>
                     </li>
-                    <li className="menu__item">
+                    {location.pathname === "/" ? null : <li className="menu__item">
                         <Link to="/">
                             Home
                         </Link>
-                    </li>
+                    </li>}
                     <li className="menu__item">
-                        <a href="">
+                        <Link to="/category">
                         About Us
-                        </a>
+                        </Link>
                     </li>
                     <li className="menu__item">
                         <a href="
