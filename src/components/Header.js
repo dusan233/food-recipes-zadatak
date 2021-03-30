@@ -38,7 +38,7 @@ const Header = () => {
                             My Meals
                         </a>
                     </li>
-                    <li className="menu__item">
+                    <li className="menu__item menu__item--icon">
                         <i className="fas fa-user-circle"></i>
                     </li>
                 </ul>

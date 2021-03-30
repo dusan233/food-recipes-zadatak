@@ -47,6 +47,12 @@
 .menu__item {
   font-size: 19px;
   margin-right: 20px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+}
+.menu__item--icon {
+  font-size: 24px;
 }
 .menu__item:last-of-type {
   margin-right: 0px;
