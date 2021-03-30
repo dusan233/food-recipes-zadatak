@@ -1,7 +1,10 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { useState } from 'react';
+import { Link, withRouter } from 'react-router-dom';
 
 const Header = () => {
+    const [showLogin, setShowLogin] = useState(false);
+
     return (
         <div className="header">
             <div className="header__left">
@@ -16,6 +19,22 @@ const Header = () => {
             </div>
             <div className="header__right">
                 <ul className="menu">
+                <li  className="menu__item menu__item--icon">
+                        <i onClick={() => setShowLogin((prevVal) => !prevVal)} className="fas fa-user-circle"></i>
+                        <div className="login" style={{display: showLogin ? "block": "none"}}>
+                            <div className="input-control">
+                                
+                                <input placeholder="Email"  type="email"/>
+                            </div>
+                            <div className="input-control">
+                                   
+                                <input placeholder="Password" type="password"/>
+                            </div>
+                            <button className="btn">
+                                Login
+                            </button>
+                        </div>
+                    </li>
                     <li className="menu__item">
                         <Link to="/">
                             Home
@@ -38,13 +57,11 @@ const Header = () => {
                             My Meals
                         </a>
                     </li>
-                    <li className="menu__item menu__item--icon">
-                        <i className="fas fa-user-circle"></i>
-                    </li>
+                    
                 </ul>
             </div>
         </div>
     )
 }
 
-export default Header
+export default Header;

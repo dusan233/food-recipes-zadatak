@@ -44,12 +44,14 @@
   display: flex;
   list-style-type: none;
 }
+
 .menu__item {
   font-size: 19px;
   margin-right: 20px;
   cursor: pointer;
   display: flex;
   align-items: center;
+  position: relative;
 }
 .menu__item--icon {
   font-size: 24px;
@@ -67,4 +69,37 @@
 }
 .menu__item a:hover {
   color: rgb(79, 129, 245);
+}
+.login {
+  display: none;
+  position: absolute;
+  cursor: initial;
+  top: 45px;
+  left: 0px;
+  border-radius: 5px;
+  padding: 20px;
+  box-shadow: 0 0 30px rgb(0 0 0 / 10%);
+  border: 1px solid rgb(218, 217, 217);
+}
+.login.show {
+  display: block;
+}
+.input-control {
+  margin-bottom: 20px;
+}
+.input-control input {
+  padding: 8px 10px;
+  border-radius: 3px;
+  border: 1px solid rgb(167, 167, 167);
+  outline: none;
+}
+.btn {
+  background: rgb(79, 129, 245);
+  color: white;
+  padding: 8px 20px;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  border-radius: 3px;
+  font-weight: bold;
 }
