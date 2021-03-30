@@ -1,4 +1,5 @@
-import React from 'react'
+import React from 'react';
+import { Link } from 'react-router-dom';
 
 const Header = () => {
     return (
@@ -14,7 +15,33 @@ const Header = () => {
                 </form>
             </div>
             <div className="header__right">
-           
+                <ul className="menu">
+                    <li className="menu__item">
+                        <Link to="/">
+                            Home
+                        </Link>
+                    </li>
+                    <li className="menu__item">
+                        <a href="">
+                        About Us
+                        </a>
+                    </li>
+                    <li className="menu__item">
+                        <a href="
+                        ">
+                            Contact
+                        </a>
+                    </li>
+                    <li className="menu__item">
+                        <a href="
+                        ">
+                            My Meals
+                        </a>
+                    </li>
+                    <li className="menu__item">
+                        <i className="fas fa-user-circle"></i>
+                    </li>
+                </ul>
             </div>
         </div>
     )
