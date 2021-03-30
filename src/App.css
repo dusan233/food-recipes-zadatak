@@ -3,3 +3,27 @@
   padding: 0px;
   box-sizing: border-box;
 }
+
+/* header styling */
+.header {
+  display: flex;
+  padding: 30px 60px;
+}
+.search-container {
+  border-radius: 4px;
+  border: 1px solid rgb(167, 167, 167);
+  padding: 3px 7px;
+  display: flex;
+}
+.search-container__input {
+  padding: 5px;
+  border: none;
+  outline: none;
+  font-size: 18px;
+}
+.search-container__icon {
+  display: flex;
+  justify-self: center;
+  align-items: center;
+  color: rgb(167, 167, 167);
+}
