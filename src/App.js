@@ -1,6 +1,7 @@
 import { Route, Switch } from "react-router-dom";
 import './App.css';
 import Header from './components/Header';
+import Footer from './components/Footer';
 
 function App() {
   return (
@@ -14,9 +15,7 @@ function App() {
         <Route path="/search" render={() => <h1>Search</h1> } />
         <Route path="/my-meals" render={() => <h1>My Meals</h1> } />
       </Switch>
-      <div className="footer">
-        Footerr
-      </div>
+      <Footer />
     </div>
   );
 }

@@ -4,6 +4,11 @@
   box-sizing: border-box;
   font-family: sans-serif;
 }
+.App {
+  min-height: 100vh; /* will cover the 100% of viewport */
+  display: flex;
+  flex-direction: column;
+}
 
 /* header styling */
 .header {
@@ -114,6 +119,25 @@
   cursor: pointer;
   border-radius: 3px;
   font-weight: bold;
+}
+
+.footer {
+  margin-top: auto;
+}
+
+.footer__wrap {
+  display: flex;
+}
+.footer__logo {
+  flex: 1;
+}
+.footer__logo img {
+  display: block;
+  width: 220px;
+  height: 170px;
+}
+.footer__links {
+  flex: 1;
 }
 
 @media (max-width: 1155px) {
