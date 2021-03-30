@@ -138,6 +138,32 @@
 }
 .footer__links {
   flex: 1;
+  display: flex;
+  padding-right: 40px;
+  align-items: center;
+  justify-content: flex-end;
+}
+.footer__copyright {
+  display: flex;
+  justify-content: center;
+  padding: 20px 0;
+  font-size: 18px;
+  font-weight: bold;
+}
+.links {
+  display: flex;
+  list-style-type: none;
+}
+.links__item a {
+  font-size: 35px;
+  text-decoration: none;
+  margin-right: 20px;
+}
+.links__item--facebook a {
+  color: #305891;
+}
+.links__item--twitter a {
+  color: #78cdf0;
 }
 
 @media (max-width: 1155px) {
