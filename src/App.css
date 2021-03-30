@@ -123,6 +123,7 @@
 
 .footer {
   margin-top: auto;
+  border-top: 1px solid rgb(221, 219, 219);
 }
 
 .footer__wrap {
@@ -149,6 +150,7 @@
   padding: 20px 0;
   font-size: 18px;
   font-weight: bold;
+  border-top: 1px solid rgb(221, 219, 219);
 }
 .links {
   display: flex;
