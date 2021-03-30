@@ -44,7 +44,16 @@
   display: flex;
   list-style-type: none;
 }
-
+.sidebar-bars {
+  display: none;
+  border: none;
+  outline: none;
+  font-size: 25px;
+  background: white;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
 .menu__item {
   font-size: 19px;
   margin-right: 20px;
@@ -102,4 +111,17 @@
   cursor: pointer;
   border-radius: 3px;
   font-weight: bold;
+}
+@media (max-width: 1155px) {
+  .menu {
+    display: none;
+  }
+  .sidebar-bars {
+    display: flex;
+  }
+}
+@media (max-width: 768px) {
+  .header {
+    padding: 20px 10px;
+  }
 }

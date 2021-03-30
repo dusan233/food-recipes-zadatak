@@ -1,6 +1,6 @@
 import React from 'react';
 import { useState } from 'react';
-import { Link, withRouter, useLocation } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 
 const Header = () => {
     const [showLogin, setShowLogin] = useState(false);
@@ -60,6 +60,9 @@ const Header = () => {
                     </li>
                     
                 </ul>
+                <button className="sidebar-bars">
+                    <i className="fas fa-bars"></i>
+                </button>
             </div>
         </div>
     )
