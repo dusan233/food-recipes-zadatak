@@ -42,27 +42,25 @@ const Header = () => {
                         </Link>
                     </li>}
                     <li className="menu__item">
-                        <Link to="/category">
+                        <Link to="#papi">
                         About Us
                         </Link>
                     </li>
                     <li className="menu__item">
-                        <a href="
+                        <a href="#some
                         ">
                             Contact
                         </a>
                     </li>
                     <li className="menu__item">
-                        <a href="
+                        <a href="#papi
                         ">
                             My Meals
                         </a>
                     </li>
                     
                 </ul>
-                <button className="sidebar-bars">
-                    <i className="fas fa-bars"></i>
-                </button>
+                
             </div>
         </div>
     )

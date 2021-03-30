@@ -6,6 +6,7 @@ function App() {
   return (
     <div className="App">
       <Header />
+      
       <Switch>
         <Route path="/" exact render={() => <h1>Home</h1> } />
         <Route path="/category" render={() => <h1>Category</h1> } />

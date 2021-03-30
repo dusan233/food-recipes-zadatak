@@ -13,6 +13,7 @@
 .header__left {
   flex: 1;
 }
+
 .header__right {
   flex: 1;
   display: flex;
@@ -89,6 +90,8 @@
   padding: 20px;
   box-shadow: 0 0 30px rgb(0 0 0 / 10%);
   border: 1px solid rgb(218, 217, 217);
+  background: white;
+  z-index: 100;
 }
 .login.show {
   display: block;
@@ -112,16 +115,37 @@
   border-radius: 3px;
   font-weight: bold;
 }
+
 @media (max-width: 1155px) {
-  .menu {
-    display: none;
+  .header {
+    display: block;
   }
-  .sidebar-bars {
-    display: flex;
+  .header__right {
+    margin-top: 20px;
   }
 }
 @media (max-width: 768px) {
   .header {
-    padding: 20px 10px;
+    padding: 20px 20px;
+  }
+  .header__right {
+    justify-content: center;
+  }
+  .header__left {
+    display: flex;
+    justify-content: center;
+  }
+}
+@media (max-width: 530px) {
+  .menu {
+    flex-direction: column;
+    align-items: center;
+  }
+  .menu__item {
+    margin-right: 0px;
+  }
+  .login {
+    left: 50%;
+    transform: translateX(-50%);
   }
 }
