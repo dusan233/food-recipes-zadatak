@@ -41,7 +41,7 @@ const Home = ({getCategories, categories}) => {
                 
                 {listCategories()}
             </div>
-            <div className="section-heading">
+            <div id="contact" className="section-heading">
                     Contact
                 </div>
             <Contact/>

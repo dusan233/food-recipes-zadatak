@@ -1,6 +1,7 @@
 import React from 'react';
 import { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
+import { HashLink } from 'react-router-hash-link';
 import * as authActions from '../actions/authentication';
 import { connect } from 'react-redux';
 
@@ -106,10 +107,9 @@ const Header = ({authenticated, ...props}) => {
                         </Link>
                     </li>
                     <li className="menu__item">
-                        <a href="#some
-                        ">
-                            Contact
-                        </a>
+                    <HashLink smooth to="/#contact">
+                        Contact
+                        </HashLink>
                     </li>
                     {authenticated ? <li className="menu__item">
                         <a href="#papi
