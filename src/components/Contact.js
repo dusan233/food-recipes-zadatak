@@ -60,7 +60,7 @@ const Contact = () => {
             </div>
             <div className="input-control">
                                     
-                <textarea onChange={onInputChange} value={message} name="message" maxLength="200" required placeholder="Message..." id="" cols="30" rows="20"></textarea>
+                <textarea onChange={onInputChange} value={message} name="message" maxLength="200" required placeholder="Message..." id="" cols="30" rows="10"></textarea>
             </div>
             {successMessage ? <div className="success-message">
                     Message sent successfully!
