@@ -19,12 +19,26 @@ const Contact = () => {
         }
     }
 
-
+    const onSubmit = (e) => {
+        e.preventDefault();
+        const messages = JSON.parse(localStorage.getItem('messages')) || [];
+        messages.push({
+            firstName,
+            lastName,
+            email,
+            message
+        })
+        localStorage.setItem('messages', JSON.stringify(messages));
+        setFirstName("");
+        setLastName("");
+        setEmail("");
+        setMessage("");
+    }
     
 
     return (
         <div className="contact">
-            <form className="contact__form">
+            <form onSubmit={onSubmit} className="contact__form">
             <div className="input-control">
                                     
                 <input onChange={onInputChange} value={firstName} name="firstName" placeholder="First name" required  type="text"/>
