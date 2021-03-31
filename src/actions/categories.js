@@ -4,9 +4,9 @@ export const getCategories =  () => {
     return async (dispatch) => {
         dispatch(fetchCategories())  
         try {
-            const response = await axios.get('https://www.themealdb.com/api/json/v1/1/list.php?c=list');
-            console.log(response.data.meals);
-            dispatch(fetchCategoriesSuccess(response.data.meals));
+            const response = await axios.get('https://www.themealdb.com/api/json/v1/1/categories.php');
+            console.log(response);
+            dispatch(fetchCategoriesSuccess(response.data.categories));
         }catch(err) {
             console.log(err);
         }
