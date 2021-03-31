@@ -9,6 +9,9 @@
   display: flex;
   flex-direction: column;
 }
+.main-content {
+  padding: 30px 100px;
+}
 
 /* header styling */
 .header {
