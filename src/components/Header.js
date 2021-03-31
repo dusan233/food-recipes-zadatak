@@ -102,9 +102,9 @@ const Header = ({authenticated, ...props}) => {
                         </Link>
                     </li>}
                     <li className="menu__item">
-                        <Link to="#papi">
+                        <HashLink smooth to="/#about">
                         About Us
-                        </Link>
+                        </HashLink>
                     </li>
                     <li className="menu__item">
                     <HashLink smooth to="/#contact">

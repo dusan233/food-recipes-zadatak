@@ -279,10 +279,10 @@
 .about__img-container img {
   display: block;
   width: 100%;
-  box-shadow: 0 0 30px rgb(0 0 0 / 10%);
 }
 .about__img-container img {
   border-radius: 200px;
+  box-shadow: 0 0 30px rgb(0 0 0 / 10%);
 }
 @media (max-width: 1155px) {
   .header {
