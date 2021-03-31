@@ -116,7 +116,10 @@
 .input-control {
   margin-bottom: 20px;
 }
-.input-control input {
+.input-control input,
+.input-control textarea {
+  min-width: 200px;
+  width: 100%;
   padding: 8px 10px;
   border-radius: 3px;
   border: 1px solid rgb(167, 167, 167);
@@ -131,6 +134,14 @@
   cursor: pointer;
   border-radius: 3px;
   font-weight: bold;
+}
+.btn--large {
+  padding: 10px 21px;
+  font-size: 17px;
+}
+.btn-container {
+  display: flex;
+  justify-content: center;
 }
 /* Footer */
 .footer {
@@ -214,7 +225,14 @@
 .section-heading {
   font-size: 30px;
   text-align: center;
-  padding: 10px 0px;
+  margin-top: 100px;
+  margin-bottom: 50px;
+}
+
+/* Contact */
+.contact__form {
+  width: 400px;
+  margin: 0 auto;
 }
 
 @media (max-width: 1155px) {

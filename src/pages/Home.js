@@ -3,7 +3,7 @@ import { useEffect } from 'react';
 import {connect} from 'react-redux';
 import { getCategories } from '../actions/categories';
 import CategoryCard from '../components/CategoryCard';
-
+import Contact from '../components/Contact';
 
 const mapStateToProos = (state) => ({
     categories: state.categories.categoriesList,
@@ -41,6 +41,10 @@ const Home = ({getCategories, categories}) => {
                 
                 {listCategories()}
             </div>
+            <div className="section-heading">
+                    Contact
+                </div>
+            <Contact/>
         </div>
     )
 }
