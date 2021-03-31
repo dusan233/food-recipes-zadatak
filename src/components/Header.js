@@ -5,15 +5,27 @@ import { Link, useLocation } from 'react-router-dom';
 const registeredUsers = [
     {email: "user1@gmail.com", password: "user11"},
     {email: "user2@gmail.com", password: "user22"}
+
 ]
 
 const Header = () => {
     const [showLogin, setShowLogin] = useState(false);
+    const [email, setEmail] = useState("");
+    const [password, setPassword] = useState("");
     const location = useLocation();
 
     const logIn = (e) => {
         e.preventDefault();
-        console.log('hej');
+        
+        
+    }
+
+    const onChangeInput = (e) => {
+        if(e.target.name === "email") {
+            setEmail(e.target.value)
+        }else {
+            setPassword(e.target.value);
+        }
     }
     
     return (
@@ -36,11 +48,11 @@ const Header = () => {
                             <form onSubmit={logIn}>
                                 <div className="input-control">
                                     
-                                    <input placeholder="Email" size="20" required  type="email"/>
+                                    <input onChange={onChangeInput} name="email" value={email} placeholder="Email" size="20" required  type="email"/>
                                 </div>
                                 <div className="input-control">
                                     
-                                    <input minLength="6" maxLength="15" required placeholder="Password" type="password"/>
+                                    <input onChange={onChangeInput} name="password" value={password} minLength="6" maxLength="15" required placeholder="Password" type="password"/>
                                 </div>
                                 <button type="submit" className="btn">
                                     Login
