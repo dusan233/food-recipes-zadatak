@@ -2,7 +2,10 @@ import React from 'react';
 import { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 
-
+const registeredUsers = [
+    {email: "user1@gmail.com", password: "user11"},
+    {email: "user2@gmail.com", password: "user22"}
+]
 
 const Header = () => {
     const [showLogin, setShowLogin] = useState(false);
