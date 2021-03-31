@@ -5,7 +5,7 @@ import * as authActions from '../actions/authentication';
 import { connect } from 'react-redux';
 
 const mapStateToProps = state => ({
-    authenticated: state.authenticated
+    authenticated: state.authanticated
 })
 
 const mapDispatchToProps = {
@@ -24,7 +24,7 @@ const Header = ({authenticated, ...props}) => {
     const [validErrorMsg, setValidErrorMsg] = useState("");
     const location = useLocation();
 
-    const logIn = (e) => {
+    const onLogIn = (e) => {
         e.preventDefault();
         const invalidEmail = registeredUsers.find(user => user.email === email);
         if (!invalidEmail) return setValidErrorMsg("No user with provided email.");
@@ -37,6 +37,10 @@ const Header = ({authenticated, ...props}) => {
         setPassword("");
         setShowLogin((prevVal) => !prevVal)
         
+    }
+
+    const onLogout = () => {
+        props.logout();
     }
 
 
@@ -65,7 +69,11 @@ const Header = ({authenticated, ...props}) => {
                 <li  className="menu__item menu__item--icon">
                         <i onClick={() => setShowLogin((prevVal) => !prevVal)} className="fas fa-user-circle"></i>
                         <div className="login" style={{display: showLogin ? "block": "none"}}>
-                            <form onSubmit={logIn}>
+                            {authenticated ? (
+                                <button onClick={onLogout} className="btn">
+                                    Logout
+                                </button>
+                             ) : (<form onSubmit={onLogIn}>
                                 <div className="input-control">
                                     
                                     <input onChange={onChangeInput} name="email" value={email} placeholder="Email" size="20" required  type="email"/>
@@ -80,7 +88,8 @@ const Header = ({authenticated, ...props}) => {
                                 <button type="submit" className="btn">
                                     Login
                                 </button>
-                            </form>
+                            </form>)
+                             }
                         </div>
                     </li>
                     {location.pathname === "/" ? null : <li className="menu__item">
