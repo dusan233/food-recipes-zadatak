@@ -12,12 +12,20 @@ const Header = () => {
     const [showLogin, setShowLogin] = useState(false);
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
+    const [validErrorMsg, setValidErrorMsg] = useState("");
     const location = useLocation();
 
     const logIn = (e) => {
         e.preventDefault();
-        
-        
+        const invalidEmail = registeredUsers.find(user => user.email === email);
+        if (!invalidEmail) return setValidErrorMsg("No user with provided email.");
+        const invalidPassword = registeredUsers.find(user => user.password === password);
+        if (!invalidPassword) return setValidErrorMsg("Incorrect Password.");
+        setValidErrorMsg("");
+        setEmail("");
+        setPassword("");
+        setShowLogin((prevVal) => !prevVal)
+        console.log("hej");
     }
 
     const onChangeInput = (e) => {
@@ -54,6 +62,9 @@ const Header = () => {
                                     
                                     <input onChange={onChangeInput} name="password" value={password} minLength="6" maxLength="15" required placeholder="Password" type="password"/>
                                 </div>
+                                {validErrorMsg ? <div className="login__error">
+                                        {validErrorMsg}
+                                    </div>: null}
                                 <button type="submit" className="btn">
                                     Login
                                 </button>
