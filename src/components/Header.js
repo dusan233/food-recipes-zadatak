@@ -32,6 +32,7 @@ const Header = ({authenticated, ...props}) => {
         if (!invalidPassword) return setValidErrorMsg("Incorrect Password.");
         
         props.login();
+        localStorage.setItem("auth", true);
         setValidErrorMsg("");
         setEmail("");
         setPassword("");
@@ -41,6 +42,8 @@ const Header = ({authenticated, ...props}) => {
 
     const onLogout = () => {
         props.logout();
+        localStorage.setItem("auth", false);
+        setShowLogin((prevVal) => !prevVal)
     }
 
 
