@@ -282,6 +282,9 @@
   .header__right {
     margin-top: 20px;
   }
+  .home-header__img-container {
+    display: none;
+  }
 }
 @media (max-width: 768px) {
   .header {
@@ -293,6 +296,13 @@
   .header__left {
     display: flex;
     justify-content: center;
+  }
+  .home-header__content {
+    align-items: center;
+    text-align: center;
+  }
+  .home-header__content p {
+    padding-right: 0;
   }
 }
 @media (max-width: 530px) {
