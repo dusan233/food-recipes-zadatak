@@ -4,6 +4,7 @@ import {connect} from 'react-redux';
 import { getCategories } from '../actions/categories';
 import CategoryCard from '../components/CategoryCard';
 import Contact from '../components/Contact';
+import HomeHeader from "../components/HomeHeader";
 
 const mapStateToProos = (state) => ({
     categories: state.categories.categoriesList,
@@ -34,7 +35,8 @@ const Home = ({getCategories, categories}) => {
 
     return (
         <div>
-            <div className="section-heading">
+            <HomeHeader />
+            <div id="categories" className="section-heading">
                     Categories
                 </div>
             <div className="categories-container">
