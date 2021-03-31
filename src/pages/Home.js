@@ -1,8 +1,8 @@
 import React from 'react'
 import { useEffect } from 'react';
 import {connect} from 'react-redux';
-import { Link } from 'react-router-dom';
 import { getCategories } from '../actions/categories';
+import CategoryCard from '../components/CategoryCard';
 
 
 const mapStateToProos = (state) => ({
@@ -23,23 +23,22 @@ const Home = ({getCategories, categories}) => {
 
     const listCategories = () => {
         return categories.map((cat, i) => (
-            <Link className="category" key={i} to={`/category/${cat.idCategory}`}>
-                <div>
-                    <div className="category__img-container">
-                        <img src={cat.strCategoryThumb} alt=""/>
-                    </div>
-                    <div className="category__name">
-                        {cat.strCategory}
-                    </div>
-                </div>
-            </Link>
+            <CategoryCard 
+                key={i}
+                categoryId={cat.idCategory} 
+                categoryName={cat.strCategory} 
+                categoryImg={cat.strCategoryThumb} 
+            />
         ))
     }
 
     return (
         <div>
-            <h1>Home</h1>
+            <div className="section-heading">
+                    Categories
+                </div>
             <div className="categories-container">
+                
                 {listCategories()}
             </div>
         </div>

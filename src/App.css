@@ -10,7 +10,7 @@
   flex-direction: column;
 }
 .main-content {
-  padding: 30px 100px;
+  padding: 40px 100px;
 }
 
 /* header styling */
@@ -194,6 +194,7 @@
 }
 .category {
   box-shadow: 0 0 30px rgb(0 0 0 / 10%);
+  border: 1px solid rgb(218, 217, 217);
   border-radius: 5px;
   color: black;
 }
@@ -209,6 +210,11 @@
   padding: 10px 0px;
   font-size: 20px;
   font-weight: bold;
+}
+.section-heading {
+  font-size: 30px;
+  text-align: center;
+  padding: 10px 0px;
 }
 
 @media (max-width: 1155px) {
