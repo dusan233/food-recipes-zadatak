@@ -291,8 +291,15 @@
   .header__right {
     margin-top: 20px;
   }
-  .home-header__img-container {
+  .home-header__img-container,
+  .about__img-container {
     display: none;
+  }
+  .about__content {
+    text-align: center;
+  }
+  .about__content p {
+    padding: 0;
   }
 }
 @media (max-width: 768px) {
