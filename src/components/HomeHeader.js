@@ -8,9 +8,9 @@ const HomeHeader = () => {
             <div className="home-header__content">
                 <h1>Food Recipes</h1>
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex explicabo unde, ea eligendi perspiciatis nostrum similique dolore nemo possimus eos eaque sed quidem magni cum excepturi cupiditate quasi sunt hic!</p>
-                <button className="btn">
-                    Categories
-                </button>
+                <Link smooth className="btn btn--large" to="/#categories">
+                    Categories  <i class="fas fa-angle-down"></i>
+                </Link>
             </div>
             <div className="home-header__img-container">
                 <img src={cookingImg} alt=""/>
