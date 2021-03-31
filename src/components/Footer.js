@@ -12,12 +12,12 @@ const Footer = () => {
                 <ul className="links">
                     <li className="links__item links__item--facebook">
                         <a href="https://www.facebook.com/TheDataDB/" target="_blank" rel="noreferrer">
-                            <i class="fab fa-facebook-square"></i>
+                            <i className="fab fa-facebook-square"></i>
                         </a>
                     </li>
                     <li className="links__item links__item--twitter">
                         <a href="https://twitter.com/TheAudioDB" target="_blank" rel="noreferrer">
-                            <i class="fab fa-twitter-square"></i>
+                            <i className="fab fa-twitter-square"></i>
                         </a>
                     </li>
                 </ul>

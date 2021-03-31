@@ -1,11 +1,13 @@
 import React from 'react'
-import { useState } from 'react'
+import { useState, useRef } from 'react'
 
 const Contact = () => {
     const [firstName, setFirstName] = useState("");
     const [lastName, setLastName] = useState("");
     const [email, setEmail] = useState("");
     const [message, setMessage] = useState("");
+    const timeoutRef = useRef();
+    const [successMessage, setSuccessMsg] = useState(false);
 
     const onInputChange = (e) => {
         if(e.target.name === "firstName") {
@@ -33,6 +35,11 @@ const Contact = () => {
         setLastName("");
         setEmail("");
         setMessage("");
+        setSuccessMsg(true);
+        clearTimeout(timeoutRef.current);
+        timeoutRef.current = setTimeout(() => {
+            setSuccessMsg(false);
+        }, 4000);
     }
     
 
@@ -55,7 +62,11 @@ const Contact = () => {
                                     
                 <textarea onChange={onInputChange} value={message} name="message" maxLength="200" required placeholder="Message..." id="" cols="30" rows="20"></textarea>
             </div>
+            {successMessage ? <div className="success-message">
+                    Message sent successfully!
+                </div>: null}
             <div className="btn-container">
+                
             <button type="submit" className="btn btn--large">
                 Send
             </button>

@@ -236,6 +236,14 @@
   margin: 0 auto;
 }
 
+.success-message {
+  padding: 13px;
+  font-size: 17px;
+  background: rgb(222, 246, 222);
+  border-radius: 3px;
+  margin-bottom: 20px;
+}
+
 @media (max-width: 1155px) {
   .header {
     display: block;
