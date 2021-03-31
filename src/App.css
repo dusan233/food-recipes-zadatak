@@ -18,7 +18,16 @@
 .header__left {
   flex: 1;
 }
-
+.login__error {
+  background: rgb(250, 197, 197);
+  color: black;
+  font-weight: bold;
+  border: 1px solid rgb(233, 164, 164);
+  padding: 10px;
+  border-radius: 3px;
+  margin-bottom: 20px;
+  font-size: 14px;
+}
 .header__right {
   flex: 1;
   display: flex;
