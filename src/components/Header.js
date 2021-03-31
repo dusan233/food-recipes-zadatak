@@ -1,14 +1,23 @@
 import React from 'react';
 import { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
+import * as authActions from '../actions/authentication';
+import { connect } from 'react-redux';
+
+const mapStateToProps = state => ({
+    authenticated: state.authenticated
+})
+
+const mapDispatchToProps = {
+    ...authActions
+}
 
 const registeredUsers = [
     {email: "user1@gmail.com", password: "user11"},
     {email: "user2@gmail.com", password: "user22"}
-
 ]
 
-const Header = () => {
+const Header = ({authenticated, ...props}) => {
     const [showLogin, setShowLogin] = useState(false);
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
@@ -21,12 +30,15 @@ const Header = () => {
         if (!invalidEmail) return setValidErrorMsg("No user with provided email.");
         const invalidPassword = registeredUsers.find(user => user.password === password);
         if (!invalidPassword) return setValidErrorMsg("Incorrect Password.");
+        
+        props.login();
         setValidErrorMsg("");
         setEmail("");
         setPassword("");
         setShowLogin((prevVal) => !prevVal)
-        console.log("hej");
+        
     }
+
 
     const onChangeInput = (e) => {
         if(e.target.name === "email") {
@@ -101,4 +113,4 @@ const Header = () => {
     )
 }
 
-export default Header;
+export default connect(mapStateToProps, mapDispatchToProps)(Header);
