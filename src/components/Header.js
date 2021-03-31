@@ -108,12 +108,12 @@ const Header = ({authenticated, ...props}) => {
                             Contact
                         </a>
                     </li>
-                    <li className="menu__item">
+                    {authenticated ? <li className="menu__item">
                         <a href="#papi
                         ">
                             My Meals
                         </a>
-                    </li>
+                    </li>: null}
                     
                 </ul>
                 
