@@ -2,9 +2,16 @@ import React from 'react';
 import { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 
+
+
 const Header = () => {
     const [showLogin, setShowLogin] = useState(false);
     const location = useLocation();
+
+    const logIn = (e) => {
+        e.preventDefault();
+        console.log('hej');
+    }
     
     return (
         <div className="header">
@@ -23,17 +30,19 @@ const Header = () => {
                 <li  className="menu__item menu__item--icon">
                         <i onClick={() => setShowLogin((prevVal) => !prevVal)} className="fas fa-user-circle"></i>
                         <div className="login" style={{display: showLogin ? "block": "none"}}>
-                            <div className="input-control">
-                                
-                                <input placeholder="Email"  type="email"/>
-                            </div>
-                            <div className="input-control">
-                                   
-                                <input placeholder="Password" type="password"/>
-                            </div>
-                            <button className="btn">
-                                Login
-                            </button>
+                            <form onSubmit={logIn}>
+                                <div className="input-control">
+                                    
+                                    <input placeholder="Email" size="20" required  type="email"/>
+                                </div>
+                                <div className="input-control">
+                                    
+                                    <input minLength="6" maxLength="15" required placeholder="Password" type="password"/>
+                                </div>
+                                <button type="submit" className="btn">
+                                    Login
+                                </button>
+                            </form>
                         </div>
                     </li>
                     {location.pathname === "/" ? null : <li className="menu__item">
