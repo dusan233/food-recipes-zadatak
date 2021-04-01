@@ -17,7 +17,7 @@ function App() {
         </Route>
         <Route path="/category/:categoryName" component={Category} />
         <Route path="/single-meal/:recipeId" render={() => <h1>Single Meal</h1> } />
-        <Route path="/search" render={() => <h1>Search</h1> } />
+        <Route path="/search/:recipeName" render={() => <h1>Search</h1> } />
         <Route path="/my-meals" render={() => <h1>My Meals</h1> } />
       </Switch>
       </div>
