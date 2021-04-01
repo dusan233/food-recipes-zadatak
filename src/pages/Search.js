@@ -7,13 +7,14 @@ import RecipeCard from '../components/Recipe';
 
 const mapStateToProps = (state) => ({
     meals: state.search.meals,
-    loading: state.search.loading
+    loading: state.search.loading,
+    randomMeal: state.randomMeal
 })
 const mapDispatchToProps = {
     getSearchRecipes
 }
 
-const Search = ({getSearchRecipes, meals, loading, ...props}) => {
+const Search = ({getSearchRecipes, meals, loading, randomMeal, ...props}) => {
     useEffect(() => {
         getSearchRecipes(props.match.params.recipeName)
     }, [props.match.params.recipeName, getSearchRecipes])
@@ -32,6 +33,9 @@ const Search = ({getSearchRecipes, meals, loading, ...props}) => {
                    Search results
             </div>
             {loading ? <div className="loading-container">Loading...</div> : <React.Fragment>
+            <div className="recipe-card-container">
+            <RecipeCard extra recipeArea={randomMeal.strArea} recipeCategory={randomMeal.strCategory} recipeId={randomMeal.idMeal} recipeImg={randomMeal.strMealThumb} recipeName={randomMeal.strMeal} />
+            </div>
             <div className="section-devider"></div>
             <div className="search-recipes">
                {renderRecipes()}
