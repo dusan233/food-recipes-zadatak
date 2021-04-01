@@ -1,6 +1,7 @@
 const initialState = {
     loading: false,
-    meals: []
+    meals: [],
+    recomendedMeal: {}
 }
 
 const reducer = (state = initialState, action) => {
@@ -14,7 +15,8 @@ const reducer = (state = initialState, action) => {
             return {
                 ...state,
                 loading: false,
-                meals: action.payload
+                meals: action.payload.meals,
+                recomendedMeal: action.payload.recomendedMeal
             }
         default:
             return state
