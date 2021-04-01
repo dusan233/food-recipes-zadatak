@@ -1,4 +1,5 @@
 import React from 'react';
+import { useState } from 'react';
 import { useEffect } from 'react';
 import { connect } from 'react-redux';
 import { getCategoryMeals } from '../actions/categoryMeals';
@@ -15,18 +16,24 @@ const mapDispatchToProps = {
 }
 
 const Category = ({getCategoryMeals, meals, recomendedMeal, loading, ...props}) => {
-
+    const [searchValue, setSearchValue] = useState('');
     useEffect(() => {
         getCategoryMeals(props.match.params.categoryName);
     }, [props.match.params.categoryName, getCategoryMeals]);
 
 
     const renderRecipes = () => {
-        return meals.map(meal => {
+        return meals.filter(meal => {
+            return meal.strMeal.toLowerCase().indexOf(searchValue.toLowerCase()) > -1
+        }).map(meal => {
             return (
                 <RecipeCard recipeId={meal.idMeal} recipeImg={meal.strMealThumb} recipeName={meal.strMeal} />
             )
         })
+    }
+
+    const onInputChange = (e) => {
+        setSearchValue(e.target.value);
     }
 
 
@@ -45,7 +52,7 @@ const Category = ({getCategoryMeals, meals, recomendedMeal, loading, ...props}) 
             </div>
             <div className="recipe-filter-container">
             <div className="search-container">
-                        <input placeholder="Search recipes" className="search-container__input" type="text"/>
+                        <input onChange={onInputChange} value={searchValue} placeholder="Search recipes" className="search-container__input" type="text"/>
                         <span className="search-container__icon">
                             <i className="fas fa-search"></i>
                         </span>
