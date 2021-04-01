@@ -21,7 +21,7 @@ const Search = ({getSearchRecipes, meals, loading, ...props}) => {
     const renderRecipes = () => {
         return meals.map(meal => {
             return (
-                <RecipeCard recipeId={meal.idMeal} recipeImg={meal.strMealThumb} recipeName={meal.strMeal} />
+                <RecipeCard extra recipeArea={meal.strArea} recipeCategory={meal.strCategory} recipeId={meal.idMeal} recipeImg={meal.strMealThumb} recipeName={meal.strMeal} />
             )
         })
     }
@@ -31,10 +31,13 @@ const Search = ({getSearchRecipes, meals, loading, ...props}) => {
             <div className="section-heading">
                    Search results
             </div>
+            {loading ? <div className="loading-container">Loading...</div> : <React.Fragment>
             <div className="section-devider"></div>
             <div className="search-recipes">
                {renderRecipes()}
             </div>
+                </React.Fragment>}
+            
         </div>
     )
 }

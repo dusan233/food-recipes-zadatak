@@ -314,6 +314,13 @@
   text-align: center;
   padding: 14px 0px;
 }
+.recipe-card__extra-info > p {
+  font-size: 17px;
+  margin-bottom: 12px;
+}
+.recipe-card__extra-info p > span {
+  font-weight: bold;
+}
 .loading-container {
   width: 200px;
   display: flex;
