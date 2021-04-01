@@ -20,6 +20,7 @@ const registeredUsers = [
 
 const Header = ({authenticated, ...props}) => {
     const [showLogin, setShowLogin] = useState(false);
+    const [searchValue, setSearchVal] = useState("");
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const [validErrorMsg, setValidErrorMsg] = useState("");
@@ -51,7 +52,10 @@ const Header = ({authenticated, ...props}) => {
     const onChangeInput = (e) => {
         if(e.target.name === "email") {
             setEmail(e.target.value)
-        }else {
+        }else if(e.target.name === "search") {
+            setSearchVal(e.target.value)
+        }
+        else {
             setPassword(e.target.value);
         }
     }
@@ -61,7 +65,7 @@ const Header = ({authenticated, ...props}) => {
             <div className="header__left">
                 <form>
                     <div className="search-container">
-                        <input placeholder="Search recipes" className="search-container__input" type="text"/>
+                        <input onChange={onChangeInput} name="search" placeholder="Search recipes" value={searchValue} className="search-container__input" type="text"/>
                         <span className="search-container__icon">
                             <i className="fas fa-search"></i>
                         </span>
