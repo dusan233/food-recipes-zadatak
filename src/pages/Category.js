@@ -3,6 +3,8 @@ import { useEffect } from 'react';
 import { connect } from 'react-redux';
 import { getCategoryMeals } from '../actions/categoryMeals';
 
+import RecipeCard from '../components/Recipe';
+
 const mapStateToProps = (state) => ({
     meals: state.categoryMeals.meals,
     recomendedMeal: state.categoryMeals.recomendedMeal,
@@ -22,14 +24,7 @@ const Category = ({getCategoryMeals, meals, recomendedMeal, loading, ...props}) 
     const renderRecipes = () => {
         return meals.map(meal => {
             return (
-                <div className="recipe-card">
-                <div className="recipe-card__img-container">
-                    <img src={meal.strMealThumb} alt={meal.strMeal}/>
-                </div>
-                <div className="recipe-card__title">
-                    {meal.strMeal}
-                </div>
-            </div>
+                <RecipeCard recipeId={meal.idMeal} recipeImg={meal.strMealThumb} recipeName={meal.strMeal} />
             )
         })
     }
@@ -44,14 +39,7 @@ const Category = ({getCategoryMeals, meals, recomendedMeal, loading, ...props}) 
             <div className="recomended-recipe">
             <h2 style={{marginBottom: "20px"}}>Our Recomendation</h2>
             <div className="recipe-card-container">
-            <div className="recipe-card">
-                <div className="recipe-card__img-container">
-                    <img src={recomendedMeal.strMealThumb} alt={recomendedMeal.strMeal}/>
-                </div>
-                <div className="recipe-card__title">
-                    {recomendedMeal.strMeal}
-                </div>
-            </div>
+            <RecipeCard recipeId={recomendedMeal.idMeal} recipeImg={recomendedMeal.strMealThumb} recipeName={recomendedMeal.strMeal} />
             </div>
             
             </div>
