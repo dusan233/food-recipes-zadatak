@@ -1,6 +1,17 @@
-import React from 'react'
+import React from 'react';
+import { useEffect } from 'react';
+import { connect } from 'react-redux';
+import {getSearchRecipes} from '../actions/search';
 
-const Search = () => {
+const mapDispatchToProps = {
+    getSearchRecipes
+}
+
+const Search = ({getSearchRecipes, ...props}) => {
+    useEffect(() => {
+        getSearchRecipes(props.match.params.recipeName)
+    }, [props.match.params.recipeName, getSearchRecipes])
+
     return (
         <div>
             <div className="section-heading">
@@ -14,4 +25,4 @@ const Search = () => {
     )
 }
 
-export default Search
+export default connect(null, mapDispatchToProps)(Search);
