@@ -40,6 +40,7 @@ const Category = ({getCategoryMeals, meals, recomendedMeal, loading, ...props}) 
             <div className="section-heading">
                     {props.match.params.categoryName}
             </div>
+            {loading ? <div className="loading-container">Loading...</div>: <React.Fragment>
             <div className="recomended-recipe">
             <h2 style={{marginBottom: "20px"}}>Our Recomendation</h2>
             <div className="recipe-card-container">
@@ -58,6 +59,7 @@ const Category = ({getCategoryMeals, meals, recomendedMeal, loading, ...props}) 
             <div className="category-recipes">
                {renderRecipes()}
             </div>
+            </React.Fragment> }
         </div>
     )
 }

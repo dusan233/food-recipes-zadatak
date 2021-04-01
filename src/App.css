@@ -312,6 +312,15 @@
   text-align: center;
   padding: 14px 0px;
 }
+.loading-container {
+  width: 200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 21px;
+  font-weight: bold;
+  margin: 0 auto;
+}
 @media (max-width: 1155px) {
   .header {
     display: block;
