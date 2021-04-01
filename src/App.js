@@ -4,6 +4,7 @@ import Header from './components/Header';
 import Footer from './components/Footer';
 import Home from './pages/Home';
 import Category from './pages/Category';
+import Search from './pages/Search';
 
 function App() {
   return (
@@ -17,7 +18,7 @@ function App() {
         </Route>
         <Route path="/category/:categoryName" component={Category} />
         <Route path="/single-meal/:recipeId" render={() => <h1>Single Meal</h1> } />
-        <Route path="/search" render={() => <h1>Search</h1> } />
+        <Route path="/search/:recipeName" component={Search} />
         <Route path="/my-meals" render={() => <h1>My Meals</h1> } />
       </Switch>
       </div>

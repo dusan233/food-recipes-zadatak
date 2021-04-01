@@ -292,7 +292,8 @@
 .recipe-card-container {
   max-width: 350px;
 }
-.category-recipes {
+.category-recipes,
+.search-recipes {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
   gap: 25px;
@@ -312,6 +313,13 @@
   font-weight: bold;
   text-align: center;
   padding: 14px 0px;
+}
+.recipe-card__extra-info > p {
+  font-size: 17px;
+  margin-bottom: 12px;
+}
+.recipe-card__extra-info p > span {
+  font-weight: bold;
 }
 .loading-container {
   width: 200px;
