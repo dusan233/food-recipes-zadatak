@@ -9,13 +9,14 @@ import RecipeCard from '../components/Recipe';
 const mapStateToProps = (state) => ({
     meals: state.search.meals,
     loading: state.search.loading,
-    randomMeal: state.randomMeal
+    randomMeal: state.randomMeal,
+    categories: state.categories.categoriesList
 })
 const mapDispatchToProps = {
     getSearchRecipes
 }
 
-const Search = ({getSearchRecipes, meals, loading, randomMeal, ...props}) => {
+const Search = ({getSearchRecipes, meals, loading, randomMeal, categories, ...props}) => {
     const [category, setCategory] = useState("Categories");
     useEffect(() => {
         getSearchRecipes(props.match.params.recipeName)
@@ -34,6 +35,14 @@ const Search = ({getSearchRecipes, meals, loading, randomMeal, ...props}) => {
         setCategory(e.target.value);
     }
 
+    const renderCategories = () => {
+        return categories.map((cat, i) => {
+            return (
+                <option key={i} value={cat.strCategory}>{cat.strCategory}</option>
+            )
+        })
+    }
+
     return (
         <div>
             <div className="section-heading">
@@ -47,12 +56,7 @@ const Search = ({getSearchRecipes, meals, loading, randomMeal, ...props}) => {
             <div className="recipe-filter-container">
                 <select className="filter-categories" onChange={onChangeSelect} value={category}>
                     <option value="Categories">All Categories</option>
-                    <option value="Beef">Beef</option>
-                    <option value="Chicken">Chicken</option>
-                    <option value="Dessert">Dessert</option>
-                    <option value="Lamb">Lamb</option>
-                    <option value="Pasta">Pasta</option>
-                    <option value="Pork">Pork</option>
+                    {renderCategories()}
                 </select>
             </div>
             <div className="section-devider"></div>
