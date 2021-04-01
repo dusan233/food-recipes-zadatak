@@ -43,6 +43,14 @@ const Category = ({getCategoryMeals, meals, recomendedMeal, loading, ...props}) 
             </div>
             
             </div>
+            <div className="recipe-filter-container">
+            <div className="search-container">
+                        <input placeholder="Search recipes" className="search-container__input" type="text"/>
+                        <span className="search-container__icon">
+                            <i className="fas fa-search"></i>
+                        </span>
+                    </div>
+            </div>
             <div className="section-devider"></div>
             <div className="category-recipes">
                {renderRecipes()}
