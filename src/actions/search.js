@@ -1,14 +1,18 @@
 import axios from 'axios';
+import { batch } from 'react-redux';
+import { setRandomMeal } from './randomMeal';
 export const getSearchRecipes = (recipeName) => {
     return async (dispatch) => {
         dispatch(fetchSearchRecipes())
-        try {
-            const response = await axios.get(`https://www.themealdb.com/api/json/v1/1/search.php?s=${recipeName}`);
-            console.log(response);
-            dispatch(fetchSearchRecipesSuccess(response.data.meals))
-        }catch(err) {
-            console.log(err);
-        }
+        Promise.all([axios.get(`https://www.themealdb.com/api/json/v1/1/search.php?s=${recipeName}`),
+        axios.get("https://www.themealdb.com/api/json/v1/1/random.php")
+    ]).then(res => {
+        batch(() => {
+            dispatch(fetchSearchRecipesSuccess(res[0].data.meals));
+            dispatch(setRandomMeal(res[1].data.meals[0]));
+        })
+    }).catch(err => console.log(err)); 
+        
     }
 }
 
