@@ -121,10 +121,9 @@ const Header = ({authenticated, ...props}) => {
                         </HashLink>
                     </li>
                     {authenticated ? <li className="menu__item">
-                        <a href="#papi
-                        ">
+                    <Link to="/my-meals">
                             My Meals
-                        </a>
+                        </Link>
                     </li>: null}
                     
                 </ul>
