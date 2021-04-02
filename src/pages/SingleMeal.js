@@ -4,6 +4,7 @@ import {connect} from "react-redux";
 import { getSingleMealData } from '../actions/singleMeal';
 import RecipeHeader from '../components/RecipeHeader';
 import RecipeInfo from '../components/RecipeInfo';
+import IngredientList from '../components/IngredientsList';
 
 const mapStateToProps = state => ({
     loading: state.singleMeal.loading,
@@ -17,6 +18,8 @@ const SingleMeal = ({getSingleMealData, meal,loading,  ...props}) => {
     useEffect(() => {
         getSingleMealData(props.match.params.recipeId)
     }, [props.match.params.recipeId, getSingleMealData])
+    
+    
 
     return (
         <div className="recipe">
@@ -28,6 +31,12 @@ const SingleMeal = ({getSingleMealData, meal,loading,  ...props}) => {
                  instructions={meal.strInstructions}
                  tags={meal.strTags}
                  />
+                 
+            </div>
+            <div className="recipe-bottom">
+                <h3>Ingredients</h3>
+                     <IngredientList meal={meal} />
+               
             </div>
         </div>
     )
