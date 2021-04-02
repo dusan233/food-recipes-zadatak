@@ -293,7 +293,8 @@
   max-width: 350px;
 }
 .category-recipes,
-.search-recipes {
+.search-recipes,
+.my-meals-recipes {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
   gap: 25px;
