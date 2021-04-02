@@ -446,6 +446,12 @@
   .about__content p {
     padding: 0;
   }
+  .recipe-main {
+    display: block;
+  }
+  .recipe-info {
+    padding-left: 0px;
+  }
 }
 @media (max-width: 768px) {
   .header {
@@ -480,6 +486,13 @@
   }
   .main-content {
     padding: 30px 30px;
+  }
+  .recipe-header {
+    margin: 0 auto;
+    min-width: 250px;
+  }
+  .recipe__ingredients {
+    margin: 0 auto;
   }
 }
 @media (max-width: 380px) {
