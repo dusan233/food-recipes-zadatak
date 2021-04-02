@@ -341,6 +341,58 @@
   font-size: 17px;
 }
 
+/* Single meal */
+.recipe-main {
+  display: flex;
+}
+.recipe-header {
+  width: 25%;
+  min-width: 300px;
+}
+.recipe-info {
+  flex: 1;
+}
+.recipe__title {
+  font-weight: bold;
+  font-size: 25px;
+  padding-bottom: 20px;
+}
+.recipe__img-container {
+  box-shadow: 0 0 30px rgb(0 0 0 / 10%);
+  border-radius: 20px;
+}
+.recipe__img-container img {
+  width: 100%;
+  display: block;
+  border-radius: 20px;
+}
+.recipe-info {
+  padding-left: 50px;
+}
+.recipe__info p {
+  margin-bottom: 20px;
+  font-size: 18px;
+}
+.recipe__info span {
+  font-weight: bold;
+  display: inline-block;
+  margin-right: 10px;
+}
+.recipe__instructions {
+  line-height: 1.7rem;
+  text-align: justify;
+}
+.recipe__tags {
+  margin-top: 20px;
+  display: flex;
+}
+.recipe__tag {
+  padding: 7px 20px;
+  background: rgb(245, 228, 72);
+  font-weight: bold;
+  margin-right: 20px;
+  border-radius: 4px;
+}
 @media (max-width: 1155px) {
   .header {
     display: block;
