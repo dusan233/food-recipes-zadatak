@@ -7,6 +7,7 @@ import Home from './pages/Home';
 import Category from './pages/Category';
 import Search from './pages/Search';
 import MyMeals from './pages/MyMeals';
+import SingleMeal from './pages/SingleMeal';
 
 
 const mapStateToProps = state => ({
@@ -24,7 +25,7 @@ function App({isAuthenticated}) {
           <Home/>
         </Route>
         <Route path="/category/:categoryName" component={Category} />
-        <Route path="/single-meal/:recipeId" render={() => <h1>Single Meal</h1> } />
+        <Route path="/single-meal/:recipeId" component={SingleMeal} />
         <Route path="/search/:recipeName" component={Search} />
         <Route path="/my-meals" render={() => {
           if(isAuthenticated) return <MyMeals />
