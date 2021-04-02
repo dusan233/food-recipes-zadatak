@@ -341,6 +341,96 @@
   font-size: 17px;
 }
 
+/* Single meal */
+.recipe-main {
+  display: flex;
+}
+.recipe-header {
+  width: 25%;
+  min-width: 300px;
+}
+.recipe-info {
+  flex: 1;
+}
+.recipe__title {
+  font-weight: bold;
+  font-size: 25px;
+  padding-bottom: 20px;
+}
+.recipe__img-container {
+  box-shadow: 0 0 30px rgb(0 0 0 / 10%);
+  border-radius: 20px;
+}
+.recipe__img-container img {
+  width: 100%;
+  display: block;
+  border-radius: 20px;
+}
+.recipe-info {
+  padding-left: 50px;
+  padding-top: 50px;
+}
+.recipe__info p {
+  margin-bottom: 20px;
+  font-size: 18px;
+}
+.recipe__info span {
+  font-weight: bold;
+  display: inline-block;
+  margin-right: 10px;
+}
+.recipe__instructions {
+  line-height: 1.7rem;
+  text-align: justify;
+}
+.recipe__tags {
+  margin-top: 20px;
+  display: flex;
+  flex-wrap: wrap;
+}
+.recipe__tag {
+  padding: 7px 20px;
+  background: rgb(245, 228, 72);
+  font-weight: bold;
+  margin-right: 20px;
+  border-radius: 4px;
+  margin-top: 20px;
+}
+.recipe__ingredients {
+  width: 100%;
+  max-width: 250px;
+  background: rgb(255, 250, 206);
+  border-radius: 4px;
+}
+.recipe-bottom {
+  margin-top: 50px;
+}
+.recipe-bottom h3 {
+  margin-bottom: 20px;
+}
+.recipe__ingredient {
+  display: flex;
+  font-size: 14px;
+  border-bottom: 1px solid rgb(245, 228, 72);
+}
+.recipe__ingredient:first-of-type {
+  border-top: 1px solid rgb(245, 228, 72);
+}
+.recipe__ingredient:last-of-type {
+  margin-bottom: 0px;
+}
+.recipe__ingredient-name {
+  flex: 1;
+  padding: 5px 10px;
+  display: flex;
+  align-items: center;
+}
+.recipe__ingredient-measure {
+  flex: 1;
+  padding: 5px 10px;
+  display: flex;
+  align-items: center;
+}
 @media (max-width: 1155px) {
   .header {
     display: block;
@@ -357,6 +447,12 @@
   }
   .about__content p {
     padding: 0;
+  }
+  .recipe-main {
+    display: block;
+  }
+  .recipe-info {
+    padding-left: 0px;
   }
 }
 @media (max-width: 768px) {
@@ -392,6 +488,13 @@
   }
   .main-content {
     padding: 30px 30px;
+  }
+  .recipe-header {
+    margin: 0 auto;
+    min-width: 250px;
+  }
+  .recipe__ingredients {
+    margin: 0 auto;
   }
 }
 @media (max-width: 380px) {

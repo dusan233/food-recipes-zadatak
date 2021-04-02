@@ -25,9 +25,9 @@ const Category = ({getCategoryMeals, meals, recomendedMeal, loading, ...props}) 
     const renderRecipes = () => {
         return meals.filter(meal => {
             return meal.strMeal.toLowerCase().indexOf(searchValue.toLowerCase()) > -1
-        }).map(meal => {
+        }).map((meal, i) => {
             return (
-                <RecipeCard recipeId={meal.idMeal} recipeImg={meal.strMealThumb} recipeName={meal.strMeal} />
+                <RecipeCard key={i} recipeId={meal.idMeal} recipeImg={meal.strMealThumb} recipeName={meal.strMeal} />
             )
         })
     }
