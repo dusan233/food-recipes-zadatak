@@ -1,5 +1,6 @@
-import { Route, Switch } from "react-router-dom";
+import { Route, Switch, Redirect } from "react-router-dom";
 import './App.css';
+import {connect } from 'react-redux';
 import Header from './components/Header';
 import Footer from './components/Footer';
 import Home from './pages/Home';
@@ -7,7 +8,12 @@ import Category from './pages/Category';
 import Search from './pages/Search';
 import MyMeals from './pages/MyMeals';
 
-function App() {
+
+const mapStateToProps = state => ({
+  isAuthenticated: state.authanticated
+})
+
+function App({isAuthenticated}) {
   return (
     <div className="App">
       <Header />
@@ -20,7 +26,10 @@ function App() {
         <Route path="/category/:categoryName" component={Category} />
         <Route path="/single-meal/:recipeId" render={() => <h1>Single Meal</h1> } />
         <Route path="/search/:recipeName" component={Search} />
-        <Route path="/my-meals" component={MyMeals} />
+        <Route path="/my-meals" render={() => {
+          if(isAuthenticated) return <MyMeals />
+          return <Redirect to="/" />
+        }} />
       </Switch>
       </div>
       <Footer />
@@ -28,4 +37,4 @@ function App() {
   );
 }
 
-export default App;
+export default connect(mapStateToProps)(App);
