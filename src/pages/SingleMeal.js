@@ -47,7 +47,7 @@ const SingleMeal = ({getSingleMealData, meal,loading, similarMeals,  ...props}) 
             </div>
                 <div className="similar-recipes">
                     {similarMeals.map(meal => {
-                        return <RecipeCard key={meal.idMeal}  recipeArea={meal.strArea} recipeCategory={meal.strCategory} recipeId={meal.idMeal} recipeImg={meal.strMealThumb} recipeName={meal.strMeal} />
+                        return <RecipeCard key={meal.idMeal} extra  recipeArea={meal.strArea} recipeCategory={meal.strCategory} recipeId={meal.idMeal} recipeImg={meal.strMealThumb} recipeName={meal.strMeal} />
                     })}
                 </div>
                 </React.Fragment>}
