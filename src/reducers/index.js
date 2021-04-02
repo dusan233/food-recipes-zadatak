@@ -5,6 +5,7 @@ import categoryMealsReducer from './categoryMeals';
 import searchReducer from './search';
 import randomMealReducer from './randomMeal';
 import myMealsReducer from './myMeals';
+import singleMealReducer from './singleMeal';
 
 export default combineReducers({
     authanticated: authReducer,
@@ -12,5 +13,6 @@ export default combineReducers({
     categoryMeals: categoryMealsReducer,
     search: searchReducer,
     randomMeal: randomMealReducer,
-    myMeals: myMealsReducer
+    myMeals: myMealsReducer,
+    singleMeal: singleMealReducer
 })
