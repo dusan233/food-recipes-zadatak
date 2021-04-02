@@ -386,6 +386,7 @@
 .recipe__tags {
   margin-top: 20px;
   display: flex;
+  flex-wrap: wrap;
 }
 .recipe__tag {
   padding: 7px 20px;
@@ -393,6 +394,7 @@
   font-weight: bold;
   margin-right: 20px;
   border-radius: 4px;
+  margin-top: 20px;
 }
 .recipe__ingredients {
   width: 100%;

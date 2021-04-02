@@ -23,6 +23,8 @@ const SingleMeal = ({getSingleMealData, meal,loading,  ...props}) => {
 
     return (
         <div className="recipe">
+            {loading ? <div className="loading-container">Loading...</div>: <React.Fragment>
+                
             <div className="recipe-main">
                 <RecipeHeader recipeImg={meal.strMealThumb} recipeTitle={meal.strMeal} />
                 <RecipeInfo category={meal.strCategory}
@@ -38,6 +40,8 @@ const SingleMeal = ({getSingleMealData, meal,loading,  ...props}) => {
                      <IngredientList meal={meal} />
                
             </div>
+                </React.Fragment>}
+            
         </div>
     )
 }
